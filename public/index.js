@@ -1,4 +1,5 @@
-+
+let data = new FormData();
++   
     function ($) {
         'use strict';
 
@@ -25,12 +26,18 @@ function loadFile(event) {
     var image = document.getElementById('output');
     image.src = URL.createObjectURL(event.target.files[0]);
     t = event.target.files[0];
-    let data = new FormData()
+    
     data.append('file', event.target.files[0])
-    console.debug("EVENT" + event.target.files[0])
+   
 
-    fetch('http://localhost:8000', {
-        method: 'POST',
-        body: data
-    })
+   
+}
+    function sendFile(event) {
+        
+        console.debug("data" + data);
+        fetch('http://localhost:8000', {
+            method: 'POST',
+            body: data
+        })
+        
 }
