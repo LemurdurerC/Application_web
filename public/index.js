@@ -32,10 +32,11 @@ function loadFile(event) {
 
    
 }
-    function sendFile(event) {
+    async function sendFile(event) {
         
         console.debug("data" + data);
-        fetch('http://35.181.149.163:8000', {
+        event.preventDefault();
+        await fetch('http://35.181.149.163:8000', {
             method: 'POST',
             body: data
         })
